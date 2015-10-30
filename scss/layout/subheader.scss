@@ -1,0 +1,98 @@
+.subheader {
+    padding-bottom: 55px;
+    ul {
+        @include list-styling();
+        &:after {
+            @include clearfix();
+        }
+    }
+    .icon {
+        fill: $baseFontColor;
+        @include transition(fill);
+        height: 40px;
+    }
+    li {
+        float: left;
+        padding: 0 22px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+        &:hover,
+        &:focus,
+        &.active {
+            .icon {
+                fill: $activeMenu;
+            }
+        }
+        &.active {
+            &:after {
+                content: '';
+                display: block;
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                //bottom: -11px;
+                top: -23px;
+                left: 47%;
+                border-bottom: 2px solid $someGreyBorder;
+                border-right: 2px solid $someGreyBorder;
+                background: $white;
+                @include transform(rotate(45deg) translateX(-50%));
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 24px;
+            border-left: 1px solid #bcbec3;
+            @include transform(translateY(-50%));
+        }
+        &:first-child {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    .icon-phone {
+        width: 29px;
+    }
+    .icon-marker {
+        width: 25px;
+    }
+    .icon-mail {
+        width: 30px;
+    }
+    .quick-contacts {
+        float: right;
+        margin-top: 56px;
+        padding-top: 70px;
+        position: relative;
+        .tip {
+            padding: 11px 4px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            border: 2px solid $someGreyBorder;
+            @include circle(3px);
+            text-align: center;
+            @include font-face(300);
+        }
+    }
+    .logo {
+        float: left;
+        margin: 61px 0 0 -17px;
+        @media #{$medium} {
+            margin-left: 0;
+        }
+        a {
+            display: block;
+            width: 403px;
+            height: 93px;
+            background: url("../images/logo.png") no-repeat;
+            font-size: 0;
+        }
+    }
+}

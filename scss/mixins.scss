@@ -1,0 +1,76 @@
+@mixin font-face($weight, $style: normal) {
+    font-family: $baseFont;
+    font-weight: $weight;
+    @if $style == 'italic' {
+        font-style: italic;
+    }
+}
+
+@mixin list-styling() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin clearfix() {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+@mixin transition($property: all, $duration: .35s, $timingFunction: ease, $delay: 0) {
+    @if $delay == 0 {
+        -webkit-transition: $property $duration $timingFunction;
+        -moz-transition: $property $duration $timingFunction;
+        -o-transition: $property $duration $timingFunction;
+        transition: $property $duration $timingFunction;
+    } @else {
+        -webkit-transition: $property $duration $timingFunction $delay;
+        -moz-transition: $property $duration $timingFunction $delay;
+        -o-transition: $property $duration $timingFunction $delay;
+        transition: $property $duration $timingFunction $delay;
+    }
+}
+
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+}
+
+@mixin circle($value) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+}
+
+@mixin box-sizing($value: border-box) {
+    -webkit-box-sizing: $value;
+    -moz-box-sizing: $value;
+    box-sizing: $value;
+}
+
+@mixin main-slider-scale-animation() {
+    0% {
+        @include transform(scale(1));
+    }
+    50% {
+        @include transform(scale(1.5));
+    }
+    100% {
+        @include transform(scale(1));
+    }
+}
+
+@mixin loader-animation() {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em $lightGrey;
+    }
+    40% {
+        box-shadow: 0 2.5em 0 0 $lightGrey;
+    }
+}

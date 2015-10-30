@@ -1,0 +1,99 @@
+.our-projects {
+    padding: 55px 0 86px;
+    background: #efefef;
+    overflow: hidden;
+    @media #{$medium} {
+        padding: 35px 0 50px;
+    }
+}
+.portfolio-items {
+    @include list-styling();
+    margin: 0 -36px;
+    @media #{$medium} {
+        margin: 0 -1%;
+    }
+    li {
+        float: left;
+        padding: 16px 13px 0 13px;
+        width: $baseWidth/4;
+        margin: 9px;
+        @include box-sizing();
+        @include circle(5px);
+        background: $white;
+        &:hover {
+            img {
+                @include transform(translateY(-50%) scale(1.5));
+            }
+        }
+        @media #{$medium} {
+            width: 23%;
+            margin: 1%;
+            padding: 16px 1% 0 1%;
+        }
+    }
+    .logo {
+        height: 210px;
+        background: $extraLightGrey;
+        text-align: center;
+        overflow: hidden;
+        @include circle(5px);
+        @media #{$medium} {
+            height: 180px;
+        }
+        img {
+            max-width: 80%;
+            margin-top: 105px;
+            @include transform(translateY(-50%));
+            @include transition(transform, 7s);
+            @media #{$medium} {
+                margin-top: 90px;
+            }
+        }
+    }
+    .actions {
+        &:after {
+            @include clearfix();
+        }
+        .icon {
+            fill: #c7c9ce;
+            margin-top: 29px;
+            @include transform(translateY(-50%));
+            @include transition(fill);
+        }
+        .icon-goto {
+            width: 23px;
+            height: 23px;
+        }
+        .icon-add {
+            width: 24px;
+            height: 24px;
+        }
+        a {
+            float: left;
+            width: 50%;
+            height: 59px;
+            text-align: center;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                border-left: 1px solid #efefef;
+            }
+            &:first-child {
+                &:after {
+                    display: none;
+                }
+            }
+            &:hover {
+                .icon {
+                    fill: $activeMenu;
+                }
+            }
+        }
+    }
+}

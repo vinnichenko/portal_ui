@@ -1,0 +1,25 @@
+@-o-keyframes main-slider-scale {
+    @include main-slider-scale-animation();
+}
+@-webkit-keyframes main-slider-scale {
+    @include main-slider-scale-animation();
+}
+@-moz-keyframes main-slider-scale {
+    @include main-slider-scale-animation();
+}
+@keyframes main-slider-scale {
+    @include main-slider-scale-animation();
+}
+
+@-o-keyframes loader-animation {
+    @include loader-animation();
+}
+@-webkit-keyframes loader-animation {
+    @include loader-animation();
+}
+@-moz-keyframes loader-animation {
+    @include loader-animation();
+}
+@keyframes loader-animation {
+    @include loader-animation();
+}

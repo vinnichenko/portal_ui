@@ -1,0 +1,42 @@
+.tabs {
+    .tabs-nav {
+        margin-bottom: 50px;
+        @include font-face(700);
+        font-size: 15px;
+        ul {
+            @include list-styling();
+            text-align: center;
+        }
+        li {
+            display: inline-block;
+            margin: 0 10px;
+            &.active {
+                a {
+                    background: $white;
+                    border-color: $white;
+                    color: $baseFontColor;
+                }
+            }
+        }
+        a {
+            display: block;
+            min-width: 70px;
+            padding: 7px 25px;
+            text-decoration: none;
+            color: #bbbbbb;
+            border: 2px solid #cecece;
+            @include circle(3px);
+            @include transition();
+            &:hover {
+                color: $activeMenu;
+                border-color: $activeMenu;
+            }
+        }
+    }
+    .single-tab {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+.footer {
+    background: $footerBg;
+    padding-bottom: 28px;
+    padding-top: 78px;
+    .social-nav {
+        float: left;
+        .icon {
+            fill: #414344;
+            @include transition(fill);
+        }
+        ul {
+            border-left-color: $footerSocialDivider;
+        }
+        li {
+            border-right-color: $footerSocialDivider;
+        }
+        a:hover,
+        a:focus {
+            background: $footerSocialDivider;
+            .icon {
+                fill: #000;
+            }
+        }
+    }
+    .bottom-text {
+        padding-top: 55px;
+    }
+}
+.copyright {
+    float: left;
+    font-size: 13px;
+}
+.signup,
+.bottom-nav {
+    float: right;
+}
+.bottom-nav {
+    ul {
+        @include list-styling();
+        &:after {
+            @include clearfix();
+        }
+    }
+    li {
+        float: left;
+        position: relative;
+        &:before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+            //position: absolute;
+            width: 4px;
+            height: 4px;
+            background: $baseFontColor;
+            @include circle(50%);
+        }
+        &:first-child {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    a {
+        color: $baseFontColor;
+        text-decoration: none;
+        font-size: 13px;
+        @include transition(color);
+        &:hover,
+        &:focus {
+            color: $activeMenu;
+        }
+    }
+}
+.signup {
+    font-size: 14px;
+    input,
+    .icon {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .pseudo {
+        padding: 10px 9px 10px 20px;
+        background: #393b3c;
+        @include circle(7px);
+        @include transition(background);
+        &.focused {
+            background: $footerBg;
+            .icon {
+                //fill: #494c4d;
+                fill: $activeMenu;
+            }
+            input[type='submit'] {
+                background: $footerBg;
+                color: $activeMenu;
+                -webkit-box-shadow: 0 0 10px rgba(31, 170, 226, .3);
+                -moz-box-shadow: 0 0 10px rgba(31, 170, 226, .3);
+                box-shadow: 0 0 10px rgba(31, 170, 226, .3);
+                &:hover,
+                &:focus {
+                    background: #393b3c;
+                }
+            }
+        }
+    }
+    input {
+        border: none;
+        margin: 0;
+        color: $baseFontColor;
+        @include font-face(700);
+        background: none;
+        outline: none;
+        width: 425px;
+        padding: 9px 25px;
+        @include box-sizing();
+        @media #{$medium} {
+            width: 250px;
+        }
+        &[type='submit'] {
+            width: auto;
+            background: #494c4d;
+            @include circle(7px);
+            @include transition();
+        }
+    }
+    .icon {
+        width: 32px;
+        height: 26px;
+        fill: $baseFontColor;
+        @include transition(fill);
+    }
+}

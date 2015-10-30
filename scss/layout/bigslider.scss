@@ -1,0 +1,132 @@
+.main-slider {
+    position: relative;
+    overflow: hidden;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        bottom: -285px;
+        left: -500px;
+        width: 5000px;
+        height: 600px;
+        background: $white;
+        @include transform(rotate(-9deg));
+    }
+    .bxslider {
+        @include list-styling();
+        li {
+            overflow: hidden;
+        }
+        img {
+            -webkit-animation: main-slider-scale;
+            -o-animation: main-slider-scale;
+            animation: main-slider-scale;
+            animation-duration: 120s;
+            animation-iteration-count: infinite;
+        }
+    }
+    .slider-content {
+        position: absolute;
+        z-index: 2;
+        //top: 280px;
+        top: 31%;
+        color: $white;
+        line-height: 1;
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        @include transform(translateY(-50%));
+        h2 {
+            @include font-face(700);
+            text-transform: uppercase;
+            font-size: 60px;
+            margin: 0;
+            @media #{$medium} {
+                font-size: 46px;
+            }
+        }
+        span {
+            @include font-face(300);
+            text-transform: lowercase;
+            font-size: 45px;
+            @media #{$medium} {
+                font-size: 30px;
+            }
+        }
+    }
+    .pager {
+        position: absolute;
+        //top: 520px;
+        bottom: 0;
+        width: 100%;
+        z-index: 2;
+        text-align: center;
+        a {
+            width: 322px;
+            overflow: hidden;
+            &:hover {
+                img {
+                    @include transform(scale(1.5));
+                }
+            }
+            @media #{$medium} {
+                width: 230px;
+            }
+        }
+        a,
+        span {
+            display: inline-block;
+            height: 241px;
+            font-size: 0;
+            cursor: pointer;
+            @media #{$medium} {
+                height: 140px;
+            }
+        }
+        span {
+            width: 111px;
+            background: #f4f4f4;
+            position: relative;
+            @include transition(background);
+            &:hover,
+            &:focus {
+                background: darken($lightGrey, 3%);
+                .icon {
+                    fill: $activeMenu;
+                }
+            }
+            @media #{$medium} {
+                width: 80px;
+            }
+            a {
+                width: 100%;
+
+            }
+        }
+        img {
+            display: block;
+            min-width: 100%;
+            min-height: 100%;
+            @include transition(transform, 7s);
+            @media #{$medium} {
+                max-width: 100%;
+            }
+        }
+        .icon {
+            fill: #d4d4d4;
+            width: 25px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate3d(-50%, -50%, 0));
+            @include transition(fill);
+        }
+        .prev {
+            .icon {
+                @include transform(translate3d(-50%, -50%, 0) scale(-1));
+            }
+        }
+    }
+}

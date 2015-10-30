@@ -1,0 +1,87 @@
+.mainnav {
+    border-top: 1px solid $lightGrey;
+    nav {
+        float: left;
+    }
+    ul {
+        @include list-styling();
+        &:after {
+            @include clearfix();
+        }
+    }
+    li {
+        float: left;
+        border-left: 1px solid $lightGrey;
+        &:first-child {
+            border-left: none;
+        }
+        a {
+            display: block;
+            padding: 32px 20px;
+            font-size: 13px;
+            @include font-face(700);
+            color: $baseFontColor;
+            text-decoration: none;
+            @include transition(color);
+            position: relative;
+            overflow: hidden;
+            &:hover {
+                color: $activeMenu;
+            }
+            @media #{$medium} {
+                padding: 22px 15px;
+            }
+        }
+        &.active {
+            a {
+                color: $activeMenu;
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    border: 16px solid transparent;
+                    border-bottom: 8px solid $activeMenu;
+                    @include transform(translateX(-50%));
+                }
+            }
+        }
+    }
+    .search {
+        float: right;
+        margin-top: 24px;
+        @media #{$medium} {
+            margin-top: 14px;
+        }
+        .icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 25px;
+            height: 25px;
+            fill: $baseFontColor;
+            @include transition(fill);
+        }
+        .focused {
+            .icon {
+                fill: $activeMenu;
+            }
+        }
+        input {
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid transparent;
+            @include circle(2px);
+            outline: none;
+            margin: 0 0 0 5px;
+            padding: 5px 8px;
+            @include font-face(300);
+            font-size: 15px;
+            color: $baseFontColor;
+            @include transition(border-color);
+            &:focus {
+                border-color: $someGreyBorder;
+            }
+        }
+    }
+}

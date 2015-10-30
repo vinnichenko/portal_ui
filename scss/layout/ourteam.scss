@@ -1,0 +1,108 @@
+.our-team {
+    padding-top: 25px;
+    padding-bottom: 101px;
+    overflow: hidden;
+    @media #{$medium} {
+        padding-bottom: 50px;
+    }
+}
+.team-members {
+    @include list-styling();
+    margin: 0 -30px;
+    text-align: center;
+    @media #{$medium} {
+        margin: 0;
+    }
+    > li {
+        float: left;
+        padding-top: 43px;
+        padding-bottom: 27px;
+        width: $baseWidth/4;
+        margin-left: 15px;
+        background-color: $extraLightGrey;
+        @include circle(5px);
+        &:hover,
+        &:focus {
+            .icon {
+                fill: $baseFontColor;
+            }
+            .social {
+                background: $extraLightGrey;
+                &:before,
+                &:after {
+                    width: 100%;
+                }
+            }
+            .image {
+                border-color: lighten($extraLightGrey, 2%);
+            }
+        }
+        @media #{$medium} {
+            width: 23%;
+            margin: 0 1%;
+            padding-top: 30px;
+        }
+    }
+    .info {
+        padding-bottom: 35px;
+        @media #{$medium} {
+            padding-bottom: 25px;
+        }
+        .image {
+            @include circle(50%);
+            width: 127px;
+            height: 127px;
+            margin: 0 auto 25px auto;
+            border: 5px solid $white;
+            overflow: hidden;
+            @include transition(border-color);
+        }
+        h3 {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+    }
+    .social {
+        background: $white;
+        padding: 21px 0 18px;
+        @include transition(background);
+        position: relative;
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 1px solid $baseFontColor;
+            @include transition(width);
+        }
+        &:before {
+            top: 0;
+            right: 0;
+        }
+        &:after {
+            bottom: 0;
+            left: 0;
+        }
+        ul {
+            @include list-styling();
+        }
+        li {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        .icon {
+            height: 21px;
+            width: 22px;
+            fill: #cdcdcd;
+            @include transition(fill);
+        }
+        a:hover,
+        a:focus {
+            .icon {
+                fill: $activeMenu;
+            }
+        }
+    }
+}

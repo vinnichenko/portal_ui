@@ -1,0 +1,75 @@
+.map {
+    height: 498px;
+}
+.map-section {
+    position: relative;
+    .quick-contacts {
+        position: absolute;
+        z-index: 2;
+        bottom: 65px;
+        left: 50%;
+        @include transform(translateX(-40%));
+        .icon {
+            fill: $baseFontColor;
+            height: 61px;
+        }
+        .icon-phone {
+            width: 40px;
+        }
+        .icon-marker {
+            width: 36px;
+        }
+        .icon-mail {
+            width: 42px;
+        }
+        ul {
+            @include list-styling();
+        }
+        li,
+        .tip {
+            background: $white;
+            border: 1px solid $mapGrey;
+            @include circle(6px);
+        }
+        li {
+            width: 61px;
+            height: 61px;
+            display: inline-block;
+            margin: 0 3px;
+            text-align: center;
+            cursor: pointer;
+            @include transition();
+            position: relative;
+            &.active,
+            &:hover,
+            &:focus {
+                border-color: $mapBlue;
+                background: $mapBlue;
+                .icon {
+                    fill: $white;
+                }
+            }
+            &.active {
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    top: -10px;
+                    left: 47%;
+                    border-bottom: 1px solid $mapGrey;
+                    border-right: 1px solid $mapGrey;
+                    background: $white;
+                    @include transform(rotate(45deg) translateX(-50%));
+                }
+            }
+        }
+        .tip {
+            position: absolute;
+            bottom: 75px;
+            width: 180px;
+            padding: 12px 20px;
+        }
+    }
+}

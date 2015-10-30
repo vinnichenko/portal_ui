@@ -1,0 +1,90 @@
+.header {
+    background: $lightGrey;
+    ul {
+        @include list-styling();
+    }
+}
+
+.header-nav {
+    float: left;
+    padding-top: 16px;
+    @include font-face(700);
+    font-size: 12px;
+    ul:after {
+        @include clearfix();
+    }
+    li {
+        float: left;
+        margin-right: 5px;
+    }
+    a {
+        display: block;
+        width: 98px;
+        line-height: 20px;
+        padding: 6px 9px;
+        @include box-sizing();
+        color: $baseFontColor;
+        text-decoration: none;
+        background: $white;
+        @include circle(3px);
+        text-align: center;
+        @include transition(color);
+        &:hover,
+        &:focus {
+            color: $activeMenu;
+            .icon {
+                fill: $activeMenu;
+            }
+        }
+    }
+    .icon {
+        width: 19px;
+        height: 19px;
+        display: inline-block;
+        vertical-align: middle;
+        float: left;
+        fill: $baseFontColor;
+        @include transition(fill);
+    }
+}
+
+.social-nav {
+    float: right;
+    ul {
+        @include list-styling();
+        &:after {
+            @include clearfix();
+        }
+        border-left: 1px solid #dee0e6;
+    }
+    li {
+        float: left;
+        border-right: 1px solid #dee0e6;
+    }
+    .icon {
+        height: 21px;
+        width: 24px;
+    }
+    .icon-fb {
+        fill: #2b75b2;
+    }
+    .icon-tw {
+        fill: #1faae2;
+    }
+    .icon-insta {
+        fill: #26658e;
+    }
+    .icon-gplus {
+        fill: #dd4070;
+    }
+    a {
+        padding: 21px;
+        height: 21px;
+        display: block;
+        @include transition(background);
+        &:hover,
+        &:focus {
+            background: #dee0e6;
+        }
+    }
+}
