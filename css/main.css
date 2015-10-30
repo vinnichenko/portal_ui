@@ -527,15 +527,45 @@ body {
 .mainnav {
   border-top: 1px solid #eceef4; }
   .mainnav nav {
-    float: left; }
+    float: left;
+    position: relative; }
   .mainnav ul {
     margin: 0;
     padding: 0;
-    list-style: none; }
+    list-style: none;
+    float: left; }
     .mainnav ul:after {
       content: '';
       display: block;
       clear: both; }
+  .mainnav .drop {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 2;
+    background: #ffffff;
+    width: 180px;
+    border: 1px solid #eceef4;
+    border-top: none; }
+    .mainnav .drop.opened {
+      display: block; }
+    .mainnav .drop li {
+      float: none;
+      border-left: none;
+      border-top: 1px solid #eceef4; }
+  .mainnav .drop-btn {
+    float: left;
+    border: 8px solid transparent;
+    border-top-color: #939497;
+    margin: 28px 20px 0 15px;
+    cursor: pointer;
+    -webkit-transition: border-top-color 0.35s ease;
+    -moz-transition: border-top-color 0.35s ease;
+    -o-transition: border-top-color 0.35s ease;
+    transition: border-top-color 0.35s ease; }
+    .mainnav .drop-btn:hover {
+      border-top-color: #1faae2; }
   .mainnav li {
     float: left;
     border-left: 1px solid #eceef4; }

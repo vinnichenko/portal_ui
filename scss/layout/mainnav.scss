@@ -2,11 +2,43 @@
     border-top: 1px solid $lightGrey;
     nav {
         float: left;
+        position: relative;
     }
     ul {
         @include list-styling();
+        float: left;
         &:after {
             @include clearfix();
+        }
+    }
+    .drop {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 2;
+        background: $white;
+        width: 180px;
+        border: 1px solid $lightGrey;
+        border-top: none;
+        &.opened {
+            display: block;
+        }
+        li {
+            float: none;
+            border-left: none;
+            border-top: 1px solid $lightGrey;
+        }
+    }
+    .drop-btn {
+        float: left;
+        border: 8px solid transparent;
+        border-top-color: lighten($baseFontColor, 15%);
+        margin: 28px 20px 0 15px;
+        cursor: pointer;
+        @include transition(border-top-color);
+        &:hover {
+            border-top-color: $activeMenu;
         }
     }
     li {

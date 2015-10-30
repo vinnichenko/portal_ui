@@ -83,34 +83,78 @@ function mainMenuChange() {
     var $navWrapper = $('.mainnav .wrapper'),
         $nav = $('.mainnav nav'),
         $search = $('.mainnav .search');
-    var hideLast = false;
+    var toAddDrop = true;
+    var dropBtn = '<span class="drop-btn"></span>';
+    var drop = '<ul class="drop"></ul>';
+    var $dropBtn = $('.drop-btn');
+    var $drop = $('.drop');
 
-    var items = [];
-
-    $nav.find('li').each(function() {
-        //items.push($(this));
-        //console.log($(this).html());
-    });
-
-    //console.log(items);
-
-    //tracking on resize
-    /*$(window).on('resize', function () {
+    $(window).on('resize', function () { //tracking on resize
         var navWrapperWidth = $navWrapper.width(),
             navWidth = $nav.width(),
             searchWidth = $search.width(),
             sumWidth = navWidth + searchWidth;
+        var $lastElement = $nav.find('li').not(':hidden').last();
+        var lastElementWidth = $lastElement.width() + 1;
+
         if (sumWidth >= navWrapperWidth) {
-            console.log('bang!');
-            hideLast = !hideLast;
+            addDrop();
+            console.log($lastElement.text() + " width: " + lastElementWidth);
+            console.log(navWrapperWidth - lastElementWidth);
+            console.log("summWidth: " + sumWidth);
+
+            $lastElement.remove().prependTo('.drop');
         }
-        if (hideLast) {
-            $nav.find('li:last-child').hide();
-            //hideLast = !hideLast;
+        if (navWrapperWidth > lastElementWidth + sumWidth && !toAddDrop) {
+            revertDrop();
         }
-    });*/
+    });
+
+    function addDrop() { //adds a dropdown menu by resizing
+        /*var dropBtn = '<span class="drop-btn"></span>';
+        var drop = '<ul class="drop"></ul>';
+        var $dropBtn = $('.drop-btn');*/
+
+        if(toAddDrop) {
+            $nav.append(dropBtn, drop);
+            toAddDrop = false;
+        }
+
+        $dropBtn.on('click', function () {
+            console.log('drop click');
+        });
+
+        /*if(!$dropBtn.hasClass('opened')) {
+            $dropBtn.on('click', function () {
+                $(this).addClass('opened');
+                $nav.find('.drop').addClass('opened');
+            });
+        } else {
+            $dropBtn.on('click', function () {
+                $(this).removeClass('opened');
+                $nav.find('.drop').removeClass('opened');
+            });
+        }*/
+
+        /*$('.drop-btn').on('click', function () {
+            if(!$(this).hasClass('opened')) {
+                $(this).addClass('opened');
+                $nav.find('.drop').addClass('opened');
+            } else {
+                $(this).removeClass('opened');
+                $nav.find('.drop').removeClass('opened');
+            }
+
+        });*/
+    }
+
+    function revertDrop() { //revert an item from drop to main nav
+        $nav.find($drop).find('li').first().appendTo($nav.find('ul').first()).remove();
+        /*var firstIterm = $nav.find($drop).find('li').first();
+        console.log(firstIterm);*/
+        /*console.log('revert');
+        console.log(toAddDrop);*/
+    }
 
 }
-
-
 //end main menu functionality
