@@ -24,6 +24,9 @@ body {
     @media #{$medium} {
         margin-bottom: 50px;
     }
+    @media #{$mediumPortrait} {
+        margin-bottom: 0;
+    }
     &:after {
         @include clearfix;
     }
@@ -32,6 +35,10 @@ body {
         margin: 0 auto;
         @media #{$medium} {
             width: 65%;
+        }
+        @media #{$mediumPortrait} {
+            width: 100%;
+            margin-bottom: 50px;
         }
         &:after {
             @include clearfix;
@@ -49,13 +56,27 @@ body {
         width: 50%;
         @include box-sizing();
         padding-right: 45px;
+        @media #{$mediumPortrait} {
+            width: 100%;
+            float: none;
+            padding-right: 0;
+        }
         &:last-child {
             float: right;
             padding-right: 0;
             padding-left: 45px;
+            @media #{$mediumPortrait} {
+                padding-left: 0;
+            }
         }
         .image {
             width: $col2image;
+            @media #{$mediumPortrait} {
+                margin-top: 23px;
+            }
+            @media #{$mediumPortrait} {
+                width: 20%;
+            }
         }
     }
     .image {
@@ -65,6 +86,9 @@ body {
     .content {
         margin-left: $col2image;
         text-align: justify;
+        @media #{$mediumPortrait} {
+            margin-left: 20%;
+        }
     }
     h2,
     h3 {

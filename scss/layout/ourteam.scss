@@ -42,6 +42,10 @@
             margin: 0 1%;
             padding-top: 30px;
         }
+        @media #{$mediumPortrait} {
+            width: 48%;
+            margin-bottom: 15px;
+        }
     }
     .info {
         padding-bottom: 35px;

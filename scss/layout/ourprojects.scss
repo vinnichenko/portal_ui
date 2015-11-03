@@ -30,6 +30,9 @@
             margin: 1%;
             padding: 16px 1% 0 1%;
         }
+        @media #{$mediumPortrait} {
+            width: 48%;
+        }
     }
     .logo {
         height: 210px;

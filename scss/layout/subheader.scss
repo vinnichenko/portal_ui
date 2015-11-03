@@ -1,5 +1,8 @@
 .subheader {
     padding-bottom: 55px;
+    @media #{$mediumPortrait} {
+        padding-bottom: 20px;
+    }
     ul {
         @include list-styling();
         &:after {
@@ -69,6 +72,9 @@
         margin-top: 56px;
         padding-top: 70px;
         position: relative;
+        @media #{$mediumPortrait} {
+            margin-top: 36px;
+        }
         .tip {
             padding: 11px 4px;
             position: absolute;
@@ -87,12 +93,20 @@
         @media #{$medium} {
             margin-left: 0;
         }
+        @media #{$mediumPortrait} {
+            margin-top: 41px;
+        }
         a {
             display: block;
             width: 403px;
             height: 93px;
             background: url("../images/logo.png") no-repeat;
             font-size: 0;
+            @media #{$mediumPortrait} {
+                width: 300px;
+                height: 69px;
+                background-size: cover;
+            }
         }
     }
 }

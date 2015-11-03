@@ -62,6 +62,9 @@
         width: 100%;
         z-index: 2;
         text-align: center;
+        @media #{$mediumPortrait} {
+            display: none;
+        }
         a {
             width: 322px;
             overflow: hidden;
