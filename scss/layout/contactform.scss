@@ -1,0 +1,44 @@
+.contact-form {
+    input, textarea {
+        display: block;
+        width: 100%;
+        @include box-sizing();
+        border: 1px solid $someGreyBorder;
+        margin: 0;
+        padding: 10px;
+        outline: none;
+        @include transition(border-color);
+        @include circle(2px);
+        &:focus {
+            border-color: $activeMenu;
+        }
+    }
+    label {
+        display: block;
+        margin: 20px 0 7px 0;
+    }
+    textarea {
+        resize: none;
+        min-height: 200px;
+    }
+    input[type='submit'] {
+        width: auto;
+        padding: 10px 30px;
+        float: right;
+        margin-top: 30px;
+        background: transparent;
+        border-color: $activeMenu;
+        color: $activeMenu;
+        @include transition();
+        &:hover,
+        &:focus {
+            background: $activeMenu;
+            color: $white;
+        }
+        @media #{$mediumPortrait} {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

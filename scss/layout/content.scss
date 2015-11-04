@@ -1,0 +1,8 @@
+.content {
+    padding-bottom: 50px;
+    padding-top: 30px;
+    border-top: 1px solid $lightGrey;
+    @media #{$smallPortrait} {
+        border-top: none;
+    }
+}
