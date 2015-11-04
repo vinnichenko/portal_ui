@@ -13,8 +13,7 @@
         left: 50%;
         @include transform(translateX(-40%));
         @media #{$smallPortrait} {
-            left: 10%;
-            @include transform(translateX(0));
+            display: none;
         }
         .icon {
             fill: $baseFontColor;

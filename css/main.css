@@ -664,6 +664,10 @@ body {
   .mainnav nav {
     float: left;
     position: relative; }
+    @media only screen and (max-width: 768px) {
+      .mainnav nav {
+        float: none;
+        position: static; } }
   .mainnav ul {
     margin: 0;
     padding: 0;
@@ -675,7 +679,17 @@ body {
       clear: both; }
     @media only screen and (max-width: 768px) {
       .mainnav ul {
-        display: none; } }
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        z-index: 2;
+        border-bottom: 1px solid #eceef4;
+        text-align: center; }
+        .mainnav ul.menu-opened {
+          width: 100%; } }
   .mainnav .drop {
     display: none;
     position: absolute;
@@ -709,17 +723,42 @@ body {
       position: absolute;
       left: 0;
       width: 100%;
-      border-top: 3px solid #939497; }
+      border-top: 3px solid #939497;
+      -webkit-transition: all 0.35s ease;
+      -moz-transition: all 0.35s ease;
+      -o-transition: all 0.35s ease;
+      transition: all 0.35s ease; }
     .mainnav .drop-btn:before {
       top: 7px; }
     .mainnav .drop-btn:after {
       top: 17px; }
+    .mainnav .drop-btn.menu-opened {
+      border-top: none; }
+      .mainnav .drop-btn.menu-opened:before {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 12px; }
+      .mainnav .drop-btn.menu-opened:after {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 12px; }
     @media only screen and (max-width: 768px) {
       .mainnav .drop-btn {
         display: block; } }
   .mainnav li {
     float: left;
     border-left: 1px solid #eceef4; }
+    @media only screen and (max-width: 768px) {
+      .mainnav li {
+        float: none;
+        border-left: none;
+        border-top: 1px solid #eceef4; } }
     .mainnav li:first-child {
       border-left: none; }
     .mainnav li a {
@@ -823,7 +862,9 @@ body {
           margin: 0 0 0 5px; } }
       @media only screen and (max-width: 480px) {
         .mainnav .search input {
-          width: 150px; } }
+          width: 0;
+          padding: 5px 0;
+          margin: 0; } }
     .mainnav .search.opened input {
       width: 180px;
       margin: 0 0 0 5px;
@@ -1263,12 +1304,7 @@ body {
     transform: translateX(-40%); }
     @media only screen and (max-width: 480px) {
       .map-section .quick-contacts {
-        left: 10%;
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
-        transform: translateX(0); } }
+        display: none; } }
     .map-section .quick-contacts .icon {
       fill: #6d6e71;
       height: 61px; }

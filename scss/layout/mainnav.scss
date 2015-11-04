@@ -9,6 +9,10 @@
     nav {
         float: left;
         position: relative;
+        @media #{$mediumPortrait} {
+            float: none;
+            position: static;
+        }
     }
     ul {
         @include list-styling();
@@ -18,6 +22,17 @@
         }
         @media #{$mediumPortrait} {
             display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: $white;
+            z-index: 2;
+            border-bottom: 1px solid $lightGrey;
+            text-align: center;
+            &.menu-opened {
+                width: 100%;
+            }
         }
     }
     .drop {
@@ -40,8 +55,6 @@
         }
     }
     .drop-btn {
-
-
         display: none;
         //float: left;
         /*border: 8px solid transparent;
@@ -63,6 +76,7 @@
             left: 0;
             width: 100%;
             border-top: 3px solid lighten($baseFontColor, 15%);
+            @include transition();
         }
         &:before {
             top: 7px;
@@ -74,6 +88,17 @@
         &:focus {
             //border-top-color: $activeMenu;
         }
+        &.menu-opened {
+            border-top: none;
+            &:before {
+                @include transform(rotate(-45deg));
+                top: 12px;
+            }
+            &:after {
+                @include transform(rotate(45deg));
+                top: 12px;
+            }
+        }
         @media #{$mediumPortrait} {
             display: block;
         }
@@ -81,6 +106,11 @@
     li {
         float: left;
         border-left: 1px solid $lightGrey;
+        @media #{$mediumPortrait} {
+            float: none;
+            border-left: none;
+            border-top: 1px solid $lightGrey;
+        }
         &:first-child {
             border-left: none;
         }
@@ -181,7 +211,9 @@
                 margin: 0 0 0 5px;
             }
             @media #{$smallPortrait} {
-                width: 150px;
+                width: 0;
+                padding: 5px 0;
+                margin: 0;
             }
         }
         &.opened {

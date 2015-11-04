@@ -84,11 +84,6 @@ $('.search .icon-search').on('click', function() {
 
 //main menu functionality
 $('.drop-btn').on('click', function () {
-    console.log('click');
-    $(this).addClass('opened');
-});
-$('.drop-btn.opened').on('click', function () {
-    console.log('click opened');
-    $(this).removeClass('opened');
+    $(this).toggleClass('menu-opened').next('ul').slideToggle(400);
 });
 //end main menu functionality
