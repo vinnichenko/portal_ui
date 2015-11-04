@@ -46,9 +46,21 @@ body {
         .content {
             margin-left: $col1image;
             font-size: 17px;
+            @media #{$small} {
+                margin-left: 25%;
+            }
+            @media #{$smallPortrait} {
+                margin-left: 0;
+            }
         }
         .image {
             width: $col1image;
+            @media #{$small} {
+                width: 25%;
+            }
+            @media #{$smallPortrait} {
+                width: 100%;
+            }
         }
     }
     .col-2 {
@@ -77,11 +89,24 @@ body {
             @media #{$mediumPortrait} {
                 width: 20%;
             }
+            @media #{$smallPortrait} {
+                width: 100%;
+            }
         }
     }
     .image {
         float: left;
         text-align: center;
+        @media #{$small} {
+            img {
+                max-width: 90%;
+            }
+        }
+        @media #{$smallPortrait} {
+            float: none;
+            //width: 100%;
+            text-align: center;
+        }
     }
     .content {
         margin-left: $col2image;
@@ -89,11 +114,17 @@ body {
         @media #{$mediumPortrait} {
             margin-left: 20%;
         }
+        @media #{$smallPortrait} {
+            margin-left: 0;
+        }
     }
     h2,
     h3 {
         margin-top: 20px;
         text-align: left;
+        @media #{$smallPortrait} {
+            text-align: center;
+        }
     }
 }
 

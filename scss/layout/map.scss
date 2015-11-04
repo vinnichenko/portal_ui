@@ -3,12 +3,19 @@
 }
 .map-section {
     position: relative;
+    @media #{$small} {
+        padding: 0 15px;
+    }
     .quick-contacts {
         position: absolute;
         z-index: 2;
         bottom: 65px;
         left: 50%;
         @include transform(translateX(-40%));
+        @media #{$smallPortrait} {
+            left: 10%;
+            @include transform(translateX(0));
+        }
         .icon {
             fill: $baseFontColor;
             height: 61px;

@@ -33,6 +33,10 @@
         @media #{$mediumPortrait} {
             width: 48%;
         }
+        @media #{$smallPortrait} {
+            width: 98%;
+            padding: 16px 3% 0 3%;
+        }
     }
     .logo {
         height: 210px;

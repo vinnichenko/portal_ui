@@ -3,6 +3,11 @@
     ul {
         @include list-styling();
     }
+    @media #{$small} {
+        .social-nav {
+            display: none;
+        }
+    }
 }
 
 .header-nav {
@@ -10,12 +15,21 @@
     padding-top: 16px;
     @include font-face(700);
     font-size: 12px;
+    @media #{$small} {
+        padding-bottom: 15px;
+        float: none;
+        text-align: center;
+    }
     ul:after {
         @include clearfix();
     }
     li {
         float: left;
         margin-right: 5px;
+        @media #{$small} {
+            float: none;
+            display: inline-block;
+        }
     }
     a {
         display: block;
@@ -32,6 +46,9 @@
         @media #{$mediumPortrait} {
             width: auto;
             padding: 6px 10px;
+        }
+        @media #{$smallPortrait} {
+            padding: 4px 7px;
         }
         &:hover,
         &:focus {
@@ -51,6 +68,9 @@
         @include transition(fill);
         @media #{$mediumPortrait} {
             margin-right: 5px;
+        }
+        @media #{$smallPortrait} {
+            display: none;
         }
     }
 }

@@ -2,17 +2,32 @@
     background: $footerBg;
     padding-bottom: 28px;
     padding-top: 78px;
+    @media #{$small} {
+        padding-top: 10px;
+    }
     .social-nav {
         float: left;
+        @media #{$small} {
+            float: none;
+        }
         .icon {
             fill: #414344;
             @include transition(fill);
         }
         ul {
             border-left-color: $footerSocialDivider;
+            @media #{$small} {
+                border-left: none;
+                text-align: center;
+            }
         }
         li {
             border-right-color: $footerSocialDivider;
+            @media #{$small} {
+                float: none;
+                display: inline-block;
+                border-right: none;
+            }
         }
         a:hover,
         a:focus {
@@ -29,12 +44,22 @@
 .copyright {
     float: left;
     font-size: 13px;
+    @media #{$small} {
+        float: none;
+        text-align: center;
+    }
 }
 .signup,
 .bottom-nav {
     float: right;
+    @media #{$small} {
+        float: none;
+    }
 }
 .bottom-nav {
+    @media #{$small} {
+        text-align: center;
+    }
     ul {
         @include list-styling();
         &:after {
@@ -44,6 +69,10 @@
     li {
         float: left;
         position: relative;
+        @media #{$small} {
+            float: none;
+            display: inline-block;
+        }
         &:before {
             content: '';
             display: inline-block;
@@ -74,6 +103,9 @@
 }
 .signup {
     font-size: 14px;
+    @media #{$small} {
+        margin: 0 auto;
+    }
     input,
     .icon {
         display: inline-block;
@@ -116,11 +148,20 @@
         @media #{$medium} {
             width: 250px;
         }
+        @media #{$small} {
+            width: 70%;
+        }
+        @media #{$smallPortrait} {
+            width: 55%;
+        }
         &[type='submit'] {
             width: auto;
             background: #494c4d;
             @include circle(7px);
             @include transition();
+            @media #{$small} {
+                float: right;
+            }
         }
     }
     .icon {

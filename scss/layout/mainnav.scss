@@ -3,6 +3,9 @@
     @media #{$medium} {
         position: relative;
     }
+    @media #{$smallPortrait} {
+        border-bottom: 1px solid $lightGrey;
+    }
     nav {
         float: left;
         position: relative;
@@ -176,6 +179,9 @@
                 width: 180px;
                 padding: 5px 8px;
                 margin: 0 0 0 5px;
+            }
+            @media #{$smallPortrait} {
+                width: 150px;
             }
         }
         &.opened {

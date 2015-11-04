@@ -1,6 +1,9 @@
 .main-slider {
     position: relative;
     overflow: hidden;
+    @media #{$smallPortrait} {
+        display: none;
+    }
     &:after {
         content: '';
         display: block;
@@ -45,6 +48,9 @@
             @media #{$medium} {
                 font-size: 46px;
             }
+            @media #{$small} {
+                font-size: 36px;
+            }
         }
         span {
             @include font-face(300);
@@ -52,6 +58,9 @@
             font-size: 45px;
             @media #{$medium} {
                 font-size: 30px;
+            }
+            @media #{$small} {
+                font-size: 24px;
             }
         }
     }

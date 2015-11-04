@@ -115,12 +115,18 @@ h2 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   margin: 0 0 15px 0; }
+  @media only screen and (max-width: 640px) {
+    h2 {
+      font-size: 34px; } }
 
 h3 {
   font-size: 26px;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   margin: 0 0 10px 0; }
+  @media only screen and (max-width: 640px) {
+    h3 {
+      font-size: 24px; } }
 
 p {
   margin: 0 0 15px 0; }
@@ -174,8 +180,20 @@ body {
     .cols .col-1 .content {
       margin-left: 175px;
       font-size: 17px; }
+      @media only screen and (max-width: 640px) {
+        .cols .col-1 .content {
+          margin-left: 25%; } }
+      @media only screen and (max-width: 480px) {
+        .cols .col-1 .content {
+          margin-left: 0; } }
     .cols .col-1 .image {
       width: 175px; }
+      @media only screen and (max-width: 640px) {
+        .cols .col-1 .image {
+          width: 25%; } }
+      @media only screen and (max-width: 480px) {
+        .cols .col-1 .image {
+          width: 100%; } }
   .cols .col-2 {
     float: left;
     width: 50%;
@@ -203,19 +221,36 @@ body {
       @media only screen and (max-width: 768px) {
         .cols .col-2 .image {
           width: 20%; } }
+      @media only screen and (max-width: 480px) {
+        .cols .col-2 .image {
+          width: 100%; } }
   .cols .image {
     float: left;
     text-align: center; }
+    @media only screen and (max-width: 640px) {
+      .cols .image img {
+        max-width: 90%; } }
+    @media only screen and (max-width: 480px) {
+      .cols .image {
+        float: none;
+        text-align: center; } }
   .cols .content {
     margin-left: 137px;
     text-align: justify; }
     @media only screen and (max-width: 768px) {
       .cols .content {
         margin-left: 20%; } }
+    @media only screen and (max-width: 480px) {
+      .cols .content {
+        margin-left: 0; } }
   .cols h2,
   .cols h3 {
     margin-top: 20px;
     text-align: left; }
+    @media only screen and (max-width: 480px) {
+      .cols h2,
+      .cols h3 {
+        text-align: center; } }
 
 .page-overlay {
   position: fixed;
@@ -383,6 +418,9 @@ body {
     margin: 0;
     padding: 0;
     list-style: none; }
+  @media only screen and (max-width: 640px) {
+    .header .social-nav {
+      display: none; } }
 
 .header-nav {
   float: left;
@@ -390,6 +428,11 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 12px; }
+  @media only screen and (max-width: 640px) {
+    .header-nav {
+      padding-bottom: 15px;
+      float: none;
+      text-align: center; } }
   .header-nav ul:after {
     content: '';
     display: block;
@@ -397,6 +440,10 @@ body {
   .header-nav li {
     float: left;
     margin-right: 5px; }
+    @media only screen and (max-width: 640px) {
+      .header-nav li {
+        float: none;
+        display: inline-block; } }
   .header-nav a {
     display: block;
     width: 98px;
@@ -420,6 +467,9 @@ body {
       .header-nav a {
         width: auto;
         padding: 6px 10px; } }
+    @media only screen and (max-width: 480px) {
+      .header-nav a {
+        padding: 4px 7px; } }
     .header-nav a:hover, .header-nav a:focus {
       color: #1faae2; }
       .header-nav a:hover .icon, .header-nav a:focus .icon {
@@ -438,6 +488,9 @@ body {
     @media only screen and (max-width: 768px) {
       .header-nav .icon {
         margin-right: 5px; } }
+    @media only screen and (max-width: 480px) {
+      .header-nav .icon {
+        display: none; } }
 
 .social-nav {
   float: right; }
@@ -550,6 +603,9 @@ body {
     @media only screen and (max-width: 768px) {
       .subheader .quick-contacts {
         margin-top: 36px; } }
+    @media only screen and (max-width: 640px) {
+      .subheader .quick-contacts {
+        display: none; } }
     .subheader .quick-contacts .tip {
       padding: 11px 4px;
       position: absolute;
@@ -572,6 +628,12 @@ body {
     @media only screen and (max-width: 768px) {
       .subheader .logo {
         margin-top: 41px; } }
+    @media only screen and (max-width: 640px) {
+      .subheader .logo {
+        float: none; } }
+    @media only screen and (max-width: 480px) {
+      .subheader .logo {
+        margin: 20px 0 0 0; } }
     .subheader .logo a {
       display: block;
       width: 403px;
@@ -583,12 +645,22 @@ body {
           width: 300px;
           height: 69px;
           background-size: cover; } }
+      @media only screen and (max-width: 640px) {
+        .subheader .logo a {
+          margin: 0 auto; } }
+      @media only screen and (max-width: 480px) {
+        .subheader .logo a {
+          width: 220px;
+          height: 51px; } }
 
 .mainnav {
   border-top: 1px solid #eceef4; }
   @media only screen and (max-width: 1280px) {
     .mainnav {
       position: relative; } }
+  @media only screen and (max-width: 480px) {
+    .mainnav {
+      border-bottom: 1px solid #eceef4; } }
   .mainnav nav {
     float: left;
     position: relative; }
@@ -749,6 +821,9 @@ body {
           width: 180px;
           padding: 5px 8px;
           margin: 0 0 0 5px; } }
+      @media only screen and (max-width: 480px) {
+        .mainnav .search input {
+          width: 150px; } }
     .mainnav .search.opened input {
       width: 180px;
       margin: 0 0 0 5px;
@@ -757,6 +832,9 @@ body {
 .main-slider {
   position: relative;
   overflow: hidden; }
+  @media only screen and (max-width: 480px) {
+    .main-slider {
+      display: none; } }
   .main-slider:after {
     content: '';
     display: block;
@@ -807,6 +885,9 @@ body {
       @media only screen and (max-width: 1280px) {
         .main-slider .slider-content h2 {
           font-size: 46px; } }
+      @media only screen and (max-width: 640px) {
+        .main-slider .slider-content h2 {
+          font-size: 36px; } }
     .main-slider .slider-content span {
       font-family: "Open Sans", sans-serif;
       font-weight: 300;
@@ -815,6 +896,9 @@ body {
       @media only screen and (max-width: 1280px) {
         .main-slider .slider-content span {
           font-size: 30px; } }
+      @media only screen and (max-width: 640px) {
+        .main-slider .slider-content span {
+          font-size: 24px; } }
   .main-slider .pager {
     position: absolute;
     bottom: 0;
@@ -975,6 +1059,10 @@ body {
     @media only screen and (max-width: 768px) {
       .portfolio-items li {
         width: 48%; } }
+    @media only screen and (max-width: 480px) {
+      .portfolio-items li {
+        width: 98%;
+        padding: 16px 3% 0 3%; } }
   .portfolio-items .logo {
     height: 210px;
     background: #f5f5f5;
@@ -1087,6 +1175,9 @@ body {
       .team-members > li {
         width: 48%;
         margin-bottom: 15px; } }
+    @media only screen and (max-width: 480px) {
+      .team-members > li {
+        width: 98%; } }
   .team-members .info {
     padding-bottom: 35px; }
     @media only screen and (max-width: 1280px) {
@@ -1157,6 +1248,9 @@ body {
 
 .map-section {
   position: relative; }
+  @media only screen and (max-width: 640px) {
+    .map-section {
+      padding: 0 15px; } }
   .map-section .quick-contacts {
     position: absolute;
     z-index: 2;
@@ -1167,6 +1261,14 @@ body {
     -ms-transform: translateX(-40%);
     -o-transform: translateX(-40%);
     transform: translateX(-40%); }
+    @media only screen and (max-width: 480px) {
+      .map-section .quick-contacts {
+        left: 10%;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0); } }
     .map-section .quick-contacts .icon {
       fill: #6d6e71;
       height: 61px; }
@@ -1230,8 +1332,14 @@ body {
   background: #2b2c2d;
   padding-bottom: 28px;
   padding-top: 78px; }
+  @media only screen and (max-width: 640px) {
+    .footer {
+      padding-top: 10px; } }
   .footer .social-nav {
     float: left; }
+    @media only screen and (max-width: 640px) {
+      .footer .social-nav {
+        float: none; } }
     .footer .social-nav .icon {
       fill: #414344;
       -webkit-transition: fill 0.35s ease;
@@ -1240,8 +1348,17 @@ body {
       transition: fill 0.35s ease; }
     .footer .social-nav ul {
       border-left-color: #3c3e3f; }
+      @media only screen and (max-width: 640px) {
+        .footer .social-nav ul {
+          border-left: none;
+          text-align: center; } }
     .footer .social-nav li {
       border-right-color: #3c3e3f; }
+      @media only screen and (max-width: 640px) {
+        .footer .social-nav li {
+          float: none;
+          display: inline-block;
+          border-right: none; } }
     .footer .social-nav a:hover,
     .footer .social-nav a:focus {
       background: #3c3e3f; }
@@ -1254,10 +1371,22 @@ body {
 .copyright {
   float: left;
   font-size: 13px; }
+  @media only screen and (max-width: 640px) {
+    .copyright {
+      float: none;
+      text-align: center; } }
 
 .signup,
 .bottom-nav {
   float: right; }
+  @media only screen and (max-width: 640px) {
+    .signup,
+    .bottom-nav {
+      float: none; } }
+
+@media only screen and (max-width: 640px) {
+  .bottom-nav {
+    text-align: center; } }
 
 .bottom-nav ul {
   margin: 0;
@@ -1271,6 +1400,10 @@ body {
 .bottom-nav li {
   float: left;
   position: relative; }
+  @media only screen and (max-width: 640px) {
+    .bottom-nav li {
+      float: none;
+      display: inline-block; } }
   .bottom-nav li:before {
     content: '';
     display: inline-block;
@@ -1298,6 +1431,9 @@ body {
 
 .signup {
   font-size: 14px; }
+  @media only screen and (max-width: 640px) {
+    .signup {
+      margin: 0 auto; } }
   .signup input,
   .signup .icon {
     display: inline-block;
@@ -1340,6 +1476,12 @@ body {
     @media only screen and (max-width: 1280px) {
       .signup input {
         width: 250px; } }
+    @media only screen and (max-width: 640px) {
+      .signup input {
+        width: 70%; } }
+    @media only screen and (max-width: 480px) {
+      .signup input {
+        width: 55%; } }
     .signup input[type='submit'] {
       width: auto;
       background: #494c4d;
@@ -1350,6 +1492,9 @@ body {
       -moz-transition: all 0.35s ease;
       -o-transition: all 0.35s ease;
       transition: all 0.35s ease; }
+      @media only screen and (max-width: 640px) {
+        .signup input[type='submit'] {
+          float: right; } }
   .signup .icon {
     width: 32px;
     height: 26px;

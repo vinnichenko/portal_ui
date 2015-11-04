@@ -75,6 +75,9 @@
         @media #{$mediumPortrait} {
             margin-top: 36px;
         }
+        @media #{$small} {
+            display: none;
+        }
         .tip {
             padding: 11px 4px;
             position: absolute;
@@ -96,6 +99,12 @@
         @media #{$mediumPortrait} {
             margin-top: 41px;
         }
+        @media #{$small} {
+            float: none;
+        }
+        @media #{$smallPortrait} {
+            margin: 20px 0 0 0;
+        }
         a {
             display: block;
             width: 403px;
@@ -106,6 +115,13 @@
                 width: 300px;
                 height: 69px;
                 background-size: cover;
+            }
+            @media #{$small} {
+                margin: 0 auto;
+            }
+            @media #{$smallPortrait} {
+                width: 220px;
+                height: 51px;
             }
         }
     }
