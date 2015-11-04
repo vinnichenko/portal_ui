@@ -1364,12 +1364,12 @@ body {
       width: 180px;
       padding: 12px 20px; }
 
-.content {
+.main-content {
   padding-bottom: 50px;
   padding-top: 30px;
   border-top: 1px solid #eceef4; }
   @media only screen and (max-width: 480px) {
-    .content {
+    .main-content {
       border-top: none; } }
 
 .contact-form input, .contact-form textarea {
