@@ -174,7 +174,8 @@
             width: 25px;
             height: 25px;
             fill: $baseFontColor;
-            @include transition(fill);
+            @include transition();
+            cursor: pointer;
             @media #{$medium} {
                 cursor: pointer;
             }
@@ -182,6 +183,15 @@
         .focused {
             .icon {
                 fill: $activeMenu;
+            }
+            .action {
+                width: 0;
+            }
+            button {
+                width: 25px;
+                .icon {
+                    width: 25px;
+                }
             }
         }
         input {
@@ -221,6 +231,21 @@
                 width: 180px;
                 margin: 0 0 0 5px;
                 padding: 5px 8px;
+            }
+        }
+        button {
+            background: none;
+            border: none;
+            margin: 0 0 0 5px;
+            padding: 0;
+            display: inline-block;
+            vertical-align: middle;
+            width: 0;
+            overflow: hidden;
+            @include transition(width);
+            .icon {
+                width: 0;
+                @include transition(width);
             }
         }
     }

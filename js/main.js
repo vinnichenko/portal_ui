@@ -87,7 +87,11 @@ new WOW().init();
 
 //search icon functionality
 $('.search .icon-search').on('click', function() {
-    $(this).parents('.search').toggleClass('opened');
+    $(this).parents('.search').addClass('opened');
+    $('.search input').focus();
+});
+$('.search input').on('blur', function () {
+    $(this).parents('.search').removeClass('opened');
 });
 //end search icon functionality
 

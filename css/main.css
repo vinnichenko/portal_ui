@@ -828,15 +828,22 @@ body {
       width: 25px;
       height: 25px;
       fill: #6d6e71;
-      -webkit-transition: fill 0.35s ease;
-      -moz-transition: fill 0.35s ease;
-      -o-transition: fill 0.35s ease;
-      transition: fill 0.35s ease; }
+      -webkit-transition: all 0.35s ease;
+      -moz-transition: all 0.35s ease;
+      -o-transition: all 0.35s ease;
+      transition: all 0.35s ease;
+      cursor: pointer; }
       @media only screen and (max-width: 1280px) {
         .mainnav .search .icon {
           cursor: pointer; } }
     .mainnav .search .focused .icon {
       fill: #1faae2; }
+    .mainnav .search .focused .action {
+      width: 0; }
+    .mainnav .search .focused button {
+      width: 25px; }
+      .mainnav .search .focused button .icon {
+        width: 25px; }
     .mainnav .search input {
       width: 180px;
       display: inline-block;
@@ -877,6 +884,25 @@ body {
       width: 180px;
       margin: 0 0 0 5px;
       padding: 5px 8px; }
+    .mainnav .search button {
+      background: none;
+      border: none;
+      margin: 0 0 0 5px;
+      padding: 0;
+      display: inline-block;
+      vertical-align: middle;
+      width: 0;
+      overflow: hidden;
+      -webkit-transition: width 0.35s ease;
+      -moz-transition: width 0.35s ease;
+      -o-transition: width 0.35s ease;
+      transition: width 0.35s ease; }
+      .mainnav .search button .icon {
+        width: 0;
+        -webkit-transition: width 0.35s ease;
+        -moz-transition: width 0.35s ease;
+        -o-transition: width 0.35s ease;
+        transition: width 0.35s ease; }
 
 .main-slider {
   position: relative;
