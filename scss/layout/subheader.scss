@@ -13,10 +13,14 @@
         fill: $baseFontColor;
         @include transition(fill);
         height: 40px;
+        pointer-events: none;
+    }
+    a {
+        display: block;
+        padding: 0 22px;
     }
     li {
         float: left;
-        padding: 0 22px;
         height: 40px;
         position: relative;
         cursor: pointer;
@@ -79,6 +83,7 @@
             display: none;
         }
         .tip {
+            display: none;
             padding: 11px 4px;
             position: absolute;
             left: 0;
@@ -88,6 +93,9 @@
             @include circle(3px);
             text-align: center;
             @include font-face(300);
+            &.visible {
+                display: block;
+            }
         }
     }
     .logo {

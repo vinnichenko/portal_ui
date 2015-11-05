@@ -70,12 +70,19 @@
                     @include transform(rotate(45deg) translateX(-50%));
                 }
             }
+            a {
+                display: block;
+            }
         }
         .tip {
             position: absolute;
             bottom: 75px;
             width: 180px;
             padding: 12px 20px;
+            display: none;
+            &.visible {
+                display: block;
+            }
         }
     }
 }
