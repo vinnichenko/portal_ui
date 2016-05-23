@@ -4,7 +4,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 // var imageop = require('gulp-image-optimization');
-var uglify = require('gulp-uglify');
+// var uglify = require('gulp-uglify');
+var cleanCSS = require('gulp-clean-css');
 
 gulp.task('sass', function () {
     gulp.src('scss/main.scss')
@@ -17,10 +18,16 @@ gulp.task('watch', function () {
     gulp.watch('scss/**/*.scss', ['sass']);
 });
 
-gulp.task('compress', function() {
-    return gulp.src('js/**/*.js')
+/*gulp.task('compress', function() {
+    return gulp.src('js/!**!/!*.js')
         .pipe(uglify())
         .pipe(gulp.dest('js/min'));
+});*/
+
+gulp.task('minify-css', function() {
+    return gulp.src('css/*.css')
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('css/min'));
 });
 
 /*gulp.task('images', function(cb) {
@@ -31,4 +38,4 @@ gulp.task('compress', function() {
     })).pipe(gulp.dest('images/optimized')).on('end', cb).on('error', cb);
 });*/
 
-gulp.task('default', ['sass', 'watch', 'compress']);
+gulp.task('default', ['sass', 'watch', 'minify-css']);
